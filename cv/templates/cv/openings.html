@@ -1,0 +1,350 @@
+{% extends 'cv/base.html' %}
+{% load static %}
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+
+{% block content %}
+<style>
+    body {
+        background: lightblue;
+    }
+    
+</style>
+
+<div id="dvImage" style="height:50vh; width:100vw; display:block; object-fit:cover; padding:0; margin:1vh; position: center;">
+
+</div>
+<!-- CSS style to put div side by side -->
+
+
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+<script type="text/javascript">
+    var img = ["t00.png", "r22.png", "r33.png", "r44.png"];
+    $(function () {
+        var i = 0;
+        $("#dvImage").css("background-image", "url(static/img/" + img[i] + ")");
+        setInterval(function () {
+            i++;
+            if (i == img.length) {
+                i = 0;
+            }
+            $("#dvImage").fadeOut("slow", function () {
+                $(this).css("background-image", "url(static/img/" + img[i] + ")");
+                $(this).css("-webkit-background-size", "cover");
+                $(this).css("-moz-background-size", "cover");
+                $(this).css("-o-background-size", "cover");
+                $(this).css("background-size", "cover");
+                $(this).css("background-repeat", "no-repeat");
+                $(this).fadeIn("slow");
+            });
+        }, 7000);
+    });
+</script>
+
+    <style>
+        .row {
+        margin-left:50px;
+        }
+    </style>
+     <h1 style="color:darkslategray; text-align:center; font-style: oblique;">ባግባቡ የተዘጋጀ ሲቪ (Resume) ወደሚቀጥለው ደረጃ (interview stage) ለማለፍ ትልቅ ሚና አለው። </h1>
+     <h1 style="color:darkslategray; text-align:center; font-style: oblique;">ሲቪዎትን ከሌሎች በተለየ ሳቢና ግልፅ በማድረጉ ረገድ ልንረዳዎት ዝግጁ ነን።</h1>
+
+     <ul>
+        <li style="color:darkred">በመጀመሪያ የሚፈልጉትን የሲቪ ኣይነት ለመምረጥ ከታች የተደረደሩትን የ ሲቪ ኣይነቶች በደንብ ይመልከቱ</li>
+        <li style="color:darkred">የሲቪ ምርጫዎትን እና ሌሎች መረጃዎችን ለማስገባት 'click here' የሚለውን ይጫኑ</li>
+        <li style="color:darkred">ፎርሙን ከሞሉ ብኋላ 'submit' የሚለውን ይጫኑ</li>
+        <li style="color:darkred">ቀጥሎ የሚመጣውን confirmation page በደንብ ያንብቡ አበቃ</li>
+     </ul>
+    <div class="row">
+        <div class="column">
+            <h2 style="color:maroon">Fancy</h2>
+           <!-- <a href="/static/img/r1.pdf"> -->
+                <img src="static/img/r1.jpg" style="width:400px;height:500px;border-style:solid; border-color: black;" />
+             </a>
+        </div>
+        <div class="column">
+            <h2 style="color:maroon">Casual</h2>
+            <!-- <a href="/static/img/r1.pdf" target="_blank"> --> 
+                <img src="static/img/r2.jpg" style="width:400px;height:500px;border-style:solid; border-color: black;" />
+            </a>
+</div>
+        <div class="column">
+            <h2 style="color:maroon">Modern</h2>
+            <!-- <a href="/static/img/r1.pdf" target="_blank"> -->
+                <img src="static/img/r3.jpg" style="width:400px;height:500px;border-style:solid; border-color: black;" />
+             </a>
+        </div>
+    </div>
+    <div class="row">
+        <div class="column">
+            <h2 style="color:maroon">Classic</h2>
+           <!-- <a href="/static/img/r1.pdf" target="_blank"> -->
+                <img src="static/img/r4.jpg" style="width:400px;height:500px; border-style:solid; border-color: black;" />
+             </a>
+        </div>
+        <div class="column">
+            <h2 style="color:maroon">Banking</h2>
+            <!-- <a href="/static/img/r1.pdf" target="_blank"> -->
+                <img src="static/img/r5.jpg" style="width:400px;height:500px;border-style:solid; border-color: black;" />
+             </a>
+        </div>
+        <div class="column">
+            <h2 style="color:maroon">Neat</h2>
+            <!-- <a href="/static/img/r1.pdf" target="_blank"> -->
+                <img src="static/img/r6.jpg" style="width:400px;height:500px;border-style:solid; border-color: black;" />
+             </a>
+        </div>
+    </div>
+</div> 
+
+<div class="lightbox">
+    <h2 style= "color:black;">Click the button below to proceed</h2>
+    <div class="card-body">
+        <a href="{% url 'apply' %}" class="btn btn-info btn-sm" type="submit">Click Here</a>
+    </div> 
+</div>
+
+<style>
+    @import url(https://fonts.googleapis.com/css?family=Open+Sans:400,500,300,700);
+    
+    * {
+      font-family: Open Sans;
+    }
+    
+    section {
+      width: 100%;
+      display: inline-block;
+      background: #333;
+      height: 50vh;
+      text-align: center;
+      font-size: 22px;
+      font-weight: 700;
+      text-decoration: underline;
+    }
+    
+    .footer-distributed{
+        background: #666;
+        box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
+        box-sizing: border-box;
+        width: 100%;
+        text-align: left;
+        font: bold 16px sans-serif;
+        padding: 55px 50px;
+    }
+    
+    .footer-distributed .footer-left,
+    .footer-distributed .footer-center,
+    .footer-distributed .footer-right{
+        display: inline-block;
+        vertical-align: top;
+    }
+    
+    /* Footer left */
+    
+    .footer-distributed .footer-left{
+        width: 40%;
+    }
+    
+    /* The company logo */
+    
+    .footer-distributed h3{
+        color:  #ffffff;
+        font: normal 36px 'Open Sans', cursive;
+        margin: 0;
+    }
+    
+    .footer-distributed h3 span{
+        color:  lightseagreen;
+    }
+    
+    /* Footer links */
+    
+    .footer-distributed .footer-links{
+        color:  #ffffff;
+        margin: 20px 0 12px;
+        padding: 0;
+    }
+    
+    .footer-distributed .footer-links a{
+        display:inline-block;
+        line-height: 1.8;
+      font-weight:400;
+        text-decoration: none;
+        color:  inherit;
+    }
+    
+    .footer-distributed .footer-company-name{
+        color:  #222;
+        font-size: 14px;
+        font-weight: normal;
+        margin: 0;
+    }
+    
+    /* Footer Center */
+    
+    .footer-distributed .footer-center{
+        width: 35%;
+    }
+    
+    .footer-distributed .footer-center i{
+        background-color:  #33383b;
+        color: #ffffff;
+        font-size: 25px;
+        width: 38px;
+        height: 38px;
+        border-radius: 50%;
+        text-align: center;
+        line-height: 42px;
+        margin: 10px 15px;
+        vertical-align: middle;
+    }
+    
+    .footer-distributed .footer-center i.fa-envelope{
+        font-size: 17px;
+        line-height: 38px;
+    }
+    
+    .footer-distributed .footer-center p{
+        display: inline-block;
+        color: #ffffff;
+      font-weight:400;
+        vertical-align: middle;
+        margin:0;
+    }
+    
+    .footer-distributed .footer-center p span{
+        display:block;
+        font-weight: normal;
+        font-size:14px;
+        line-height:2;
+    }
+    
+    .footer-distributed .footer-center p a{
+        color:  lightseagreen;
+        text-decoration: none;;
+    }
+    
+    .footer-distributed .footer-links a:before {
+      content: "|";
+      font-weight:300;
+      font-size: 20px;
+      left: 0;
+      color: #fff;
+      display: inline-block;
+      padding-right: 5px;
+    }
+    
+    .footer-distributed .footer-links .link-1:before {
+      content: none;
+    }
+    
+    /* Footer Right */
+    
+    .footer-distributed .footer-right{
+        width: 20%;
+    }
+    
+    .footer-distributed .footer-company-about{
+        line-height: 20px;
+        color:  white;
+        font-size: 13px;
+        font-weight: normal;
+        margin: 0;
+    }
+    
+    .footer-distributed .footer-company-about span{
+        display: block;
+        color:  #ffffff;
+        font-size: 14px;
+        font-weight: bold;
+        margin-bottom: 20px;
+    }
+    
+    .footer-distributed .footer-icons{
+        margin-top: 25px;
+    }
+    
+    .footer-distributed .footer-icons a{
+        display: inline-block;
+        width: 35px;
+        height: 35px;
+        cursor: pointer;
+        background-color:  #33383b;
+        border-radius: 2px;
+    
+        font-size: 20px;
+        color: #ffffff;
+        text-align: center;
+        line-height: 35px;
+    
+        margin-right: 3px;
+        margin-bottom: 5px;
+    }
+    
+    /* If you don't want the footer to be responsive, remove these media queries */
+    
+    @media (max-width: 880px) {
+    
+        .footer-distributed{
+            font: bold 14px sans-serif;
+        }
+    
+        .footer-distributed .footer-left,
+        .footer-distributed .footer-center,
+        .footer-distributed .footer-right{
+            display: block;
+            width: 100%;
+            margin-bottom: 40px;
+            text-align: center;
+        }
+    
+        .footer-distributed .footer-center i{
+            margin-left: 0;
+        }
+    
+    }
+    
+    </style>
+    <footer class="footer-distributed">
+    
+        <div class="footer-left"> 
+            <p class="footer-links">
+                <a href="#" class="link-1">Home</a>
+            </p>
+            <p class="footer-company-name">Copyright © 2021</p>
+        </div>
+        
+        <div class="footer-center">
+            <div>
+                <i class="fa fa-map-marker"></i>
+                <p><span>Contact </span> </p>
+            </div>
+            <div>
+                <i class="fa fa-envelope"></i>
+                <p><a href="mailto:ezraermy@gmail.com">ezraermy@gmail.com</a></p>
+            </div>
+            <div>
+                <i class="fa fa-envelope"></i>
+                <p><a href="https://github.com/ezraermy">github</a></p>
+            </div>
+            <div>
+                <i class="fa fa-envelope"></i>
+                <p><a href="https://www.linkedin.com/in/ezra-yehuwalashet-wondimu-978b53128/">LinkedIn</a></p>
+            </div>
+        </div>
+        <div class="footer-right">
+    
+            <p class="footer-company-about">
+                <span>About this site</span>
+                This website were built mainly (but not limited to) fresh graduates
+                to help boost their job hunting effort by making their resume
+                attractive and easy to read. 
+            </p>
+    
+        </div>
+    
+    </footer>
+
+{% endblock %}

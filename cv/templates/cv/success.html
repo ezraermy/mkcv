@@ -1,0 +1,56 @@
+{% extends 'cv/base.html' %}
+{% load static %}
+
+{% block content %}
+<style>
+    body {
+        background: lightcyan;
+    }
+
+    h3 {
+        display: flex;
+        justify-content: center;
+        color: white;
+    }
+
+    span::before {
+        content: "";
+        animation: animate infinite 10s;
+        padding-left: 10px;
+    }
+
+    @keyframes animate {
+
+        0% {
+            content: "";
+        }
+
+        50% {
+            content: "";
+        }
+
+        75% {
+            content: "";
+        }
+    }
+</style>
+
+<h3><span> </span></h3>
+<div class="container card">
+    <h1 style="color:green">Submitted!</h1>
+    <p>Your information has been received.</p>
+    <p>Please note that, analizing and processing the submitted information
+        will take up to 24 hours. We will send your draft resume (CV) in pdf file using
+        your provided email address or telegram. N.B. You must have an email address or telegram.
+    </p>
+    <p>Please also note that, it will cost 200 birr to receive the final Resume file.
+        To pay please use bank accounts:</p>
+        <ul>
+            <li>CBE: 1000276127048</li>
+            <li>Abyssinia: 73646421</li>
+            <li>Awash: 01320541276000</li>
+            <li>CBE or TeleBirr: +251925394152</li>
+        </ul>
+    <p>If you have any questions, you can reach out to us via email: <ins cite="ezraermy@gmail.com">ezraermy@gmail.com</ins></p>
+</div>
+{% endblock %}

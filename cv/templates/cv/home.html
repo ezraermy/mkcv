@@ -1,0 +1,24 @@
+{% extends 'cv/base.html' %}
+{% load static%}
+
+{% block content %}
+<div class="container card">
+    <h1>Make Your Resume</h1>
+    <div class="card-body">
+        <table class="table table-hover">
+
+            {% for p in cvmakers %}
+            <tr>
+                <td>{{p.CVformat}}</td>
+                <td>{{p.name}}</td>
+                <td>{{p.dob}}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+</div>
+{% for p in cvmakers %}
+{{p.name}}
+{% endfor %}
+
+{% endblock %}
